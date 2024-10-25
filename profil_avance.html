@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Page web personelle</title>
+    <link rel="stylesheet" href="page web css.css">
+</head>
+<body>
+  <h1>Hiba SAGHIR</h1>
+ 
+  <section>
+    <h2>A propos de moi :</h2>
+      <div class="profile-container">
+          <img src="WhatsApp Image 2024-10-23 à 11.59.27_c5b8ba4d.jpg" alt="Hiba Saghir">
+          <div class="profile-text">
+              <p>
+                  Je m'appelle Hiba Saghir. J'ai 19 ans et je suis passionnée par l'informatique.
+                  Actuellement, je suis étudiante en troisième année à l'EMSI (École Marocaine des Sciences de l'Ingénieur),
+                  spécialisée en génie en informatique.
+              </p>
+          </div>
+      </div>
+  </section>
+  <section>
+   <h2>Hobbies et objectifs :</h2>
+   <h3>Mes hobbies :</h3>
+   <ul>
+    <li>Lecture, en particulier des romans de fantasy en arabe</li>
+    <li>Programmation, avec des projets personnels et l’apprentissage de nouveaux langages</li>
+    <li>Cuisine, en expérimentant de nouvelles recettes, surtout des plats traditionnels</li>
+   </ul>
+   <h3>Mes objectifs :</h3>
+   <ol>
+    <li>Améliorer mes compétences en programmation et apprendre de nouveaux langages.</li>
+    <li>Participer à des projets de groupe pour renforcer mes capacités en travail d'équipe.</li>
+    <li>Obtenir des résultats satisfaisants dans mes examens et mes travaux pratiques.</li>
+  </section>
+  <section>
+  <h2>Tableau d'Amis :</h2>
+  <table border="1">
+    <tr>
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Ville</th>
+        <th>Profil</th>
+    </tr>
+    <tr>
+        <td>Fathi salma</td>
+        <td>19</td>
+        <td>Settat</td>
+        <td><a href="https://www.example.com" name="liensalma"></a></td>
+    </tr>
+    <tr>
+        <td>Saghir Ferdaous</td>
+        <td>20</td>
+        <td>Casablanca</td>
+        <td><a name="lienfifi"></a></td>
+    </tr>
+    <tr>
+        <td>Saghir salma</td>
+        <td>19</td>
+        <td>Casablanca</td>
+        <td><a name="liensaghir"></a></td>
+    </tr>
+  </table>
+  </section>
+  <section>
+    <script>
+      function validateForm(event) {
+          // Prévenir l'envoi du formulaire par défaut
+          event.preventDefault();
+          
+          // Récupérer les valeurs des champs
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          let valid = true;
+
+          // Réinitialiser les messages d'erreur
+          document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+          // Validation du nom
+          if (name === "") {
+              document.getElementById("nameError").textContent = "Le champ nom ne peut pas être vide.";
+              valid = false;
+          }
+
+          // Validation de l'email
+          if (!emailPattern.test(email)) {
+              document.getElementById("emailError").textContent = "Veuillez entrer un email valide.";
+              valid = false;
+          }
+
+          // Si tout est valide, envoyer le formulaire
+          if (valid) {
+              alert("Formulaire envoyé avec succès !");
+          }
+      }
+  </script>
+</head>
+<body>
+
+  <h2>Formulaire de Contact</h2>
+  <form onsubmit="validateForm(event)">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required>
+      <span class="error" id="nameError"></span>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error" id="emailError"></span>
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Envoyer</button>
+  </form>
+  </section>
+</body>
+</html>
